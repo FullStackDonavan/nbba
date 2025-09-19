@@ -238,9 +238,7 @@
       <!-- Parent Company -->
       <div>
         <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Parent Company</label>
-        <input type="text" v-model="form.parentCompany"
-              class="w-full px-3 py-2 border rounded-md dark:bg-[#142610] dark:text-white"
-              />
+        <input type="text" v-model="form.parentCompany" class="w-full px-3 py-2 border rounded-md dark:bg-[#142610] dark:text-white" />
       </div>
 
       <!-- Work Info -->
@@ -263,10 +261,66 @@
 
 
 
-
-
-
-
+  <!-- Spouse -->
+  <!-- Personal Info -->
+   <hr />
+   <h2>Spouse</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1">First Name</label>
+        <input type="text" v-model="form.spouseFirstName"
+              class="w-full px-3 py-2 border rounded-md dark:bg-[#142610] dark:text-white"
+               />
+      </div>
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Middle Name</label>
+        <input type="text" v-model="form.spouseMiddleName"
+              class="w-full px-3 py-2 border rounded-md dark:bg-[#142610] dark:text-white"
+               />
+      </div>
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Last Name</label>
+        <input type="text" v-model="form.spouseLastName"
+              class="w-full px-3 py-2 border rounded-md dark:bg-[#142610] dark:text-white"
+               />
+      </div>
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Social Security Number</label>
+        <input type="text" v-model="form.spouseSocialSecurityNumber"
+              class="w-full px-3 py-2 border rounded-md dark:bg-[#142610] dark:text-white"
+               />
+      </div>
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Date Of Birth</label>
+        <input type="date" v-model="form.spouseDateOfBirth"
+              class="w-full px-3 py-2 border rounded-md dark:bg-[#142610] dark:text-white"
+               />
+      </div>
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Age</label>
+        <input type="text" v-model="form.spouseAge"
+              class="w-full px-3 py-2 border rounded-md dark:bg-[#142610] dark:text-white"
+               />
+      </div>
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Gender</label>
+        <input type="text" v-model="form.spouseGender"
+              class="w-full px-3 py-2 border rounded-md dark:bg-[#142610] dark:text-white"
+               />
+      </div>
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Weight</label>
+        <input type="text" v-model="form.spouseWeight"
+              class="w-full px-3 py-2 border rounded-md dark:bg-[#142610] dark:text-white"
+               />
+      </div>
+      <div>
+        <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Height</label>
+        <input type="text" v-model="form.spouseHeight"
+              class="w-full px-3 py-2 border rounded-md dark:bg-[#142610] dark:text-white"
+               />
+      </div>
+    </div>
 
     <!-- Health Plan -->
     <div>
@@ -326,7 +380,17 @@ const form = reactive({
   height : '',
   reasons: [] as string[],
   jobTitle: '',
-  hrsPerWeek : ''
+  hrsPerWeek : '',
+  spouseFirstName: '',
+  spouseMiddleName: '',
+  spouseLastName: '',
+  spouseSocialSecurityNumber: '',
+  spouseDateOfBirth : '',
+  spouseAge: '',
+  spouseGender : '',
+  spouseWeight : '',
+  spouseHeight : '',
+
 })
 
 const message = ref('')
@@ -374,6 +438,16 @@ const submitForm = async () => {
     form.reasons = []
     form.jobTitle = ''
     form.hrsPerWeek = ''
+    form.spouseFirstName = ''
+    form.spouseMiddleName = ''
+    form.spouseLastName = ''
+    form.spouseSocialSecurityNumber = ''
+    form.spouseDateOfBirth  = ''
+    form.spouseAge = ''
+    form.spouseGender  = ''
+    form.spouseWeight  = ''
+    form.spouseHeight  = ''
+    
   } catch (err: any) {
     console.error(err)
     error.value = err?.message || 'Failed to submit application'

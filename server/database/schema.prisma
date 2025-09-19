@@ -102,6 +102,16 @@ model InsuranceApplication {
   phoneNumber        String
   email              String
 
+  spouseFirstName            String?
+  spouseMiddleName           String?
+  spouseLastName             String?
+  spouseSocialSecurityNumber String?
+  spouseDateOfBirth          DateTime?
+  spouseAge                  String?
+  spouseGender               String?
+  spouseWeight               String?
+  spouseHeight               String?
+
   streetAddress      String
   city               String
   state              String

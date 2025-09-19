@@ -46,7 +46,17 @@ export default defineEventHandler(async (event) => {
       dentalPlan,
       visionPlan,
       lifeAncillaryPlan,
-      reasons
+      reasons,
+      spouseFirstName,
+      spouseMiddleName,
+      spouseLastName,
+      spouseSocialSecurityNumber,
+      spouseDateOfBirth,
+      spouseAge,
+      spouseGender,
+      spouseWeight,
+      spouseHeight
+
     } = body
 
     if (
@@ -135,6 +145,15 @@ export default defineEventHandler(async (event) => {
         visionPlan: visionPlan || null,
         lifeAncillaryPlan: lifeAncillaryPlan || null,
         reasons: reasons?.length ? reasons.join(',') : null,
+        spouseFirstName,
+        spouseMiddleName,
+        spouseLastName,
+        spouseSocialSecurityNumber,
+        spouseDateOfBirth: normalizeDate(spouseDateOfBirth),
+        spouseAge,
+        spouseGender,
+        spouseWeight,
+        spouseHeight
       },
     })
 
